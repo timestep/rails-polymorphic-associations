@@ -50,8 +50,11 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.24)
     minitest (4.7.5)
+    mocha (0.14.0)
+      metaclass (~> 0.0.1)
     multi_json (1.7.9)
     nifty-generators (0.4.6)
     polyglot (0.3.3)
@@ -113,6 +116,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails
+  mocha
   nifty-generators
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
