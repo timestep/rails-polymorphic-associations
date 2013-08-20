@@ -1,3 +1,3 @@
 class Event < ActiveRecord::Base
-	has_many :comments, :as => :commentable
+  attr_accessible :content
 end
