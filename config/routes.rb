@@ -1,8 +1,8 @@
 PolyApp::Application.routes.draw do
 
-  resources :articles, :has_many =>  :comments
+  resources :articles
   resources :photos, :has_many => :comments
   resources :events, :has_many => :comments
 
-  root :articles
+  root :to => "articles#index"
 end

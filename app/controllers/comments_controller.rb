@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def index
-    @comments = Comment.all
+    @commentable = find_commentable
+    @comments = @commentable.comments
   end
 
   def show
@@ -37,5 +38,16 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to comments_url, :notice => "Successfully destroyed comment."
+  end
+
+  private
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~/(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
   end
 end
